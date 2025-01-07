@@ -1,0 +1,51 @@
+<nav>
+    <ul>
+        <li (click)="showAllFoods()" [ngClass]="exactFood == 0 ? 'mimdinare' : ''">All</li>
+        <li (click)="filterByCategory(item.id)" [ngClass]="item.id === exactFood ? 'mimdinare' : ''" *ngFor="let item of categories">{{item.name}}</li>
+    </ul>
+</nav>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+<div class="block">
+<main>
+    <div class="inputBox">
+        <label for="">Spiciness </label>
+        <input type="range" step="-1" min="-1" max="4" [(ngModel)]="spicIndex">
+    </div>
+    <div class="inputBox">
+        <label for="">Nuts </label>
+        <input type="checkbox" [(ngModel)]="nutsIndex">
+    </div>
+    <div class="inputBox">
+        <label for="">Vegetarian </label>
+        <input type="checkbox" [(ngModel)]="vegetarianIndex">
+    </div>
+    <button (click)="filterByInputs()">Apply Filter</button>
+    <button (click)="showAllFoods()">Reset</button>
+</main>
+
+<section>
+    <div *ngFor="let food of foodList" class="card" style="width: 16rem;">
+        <img [src]="food.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{food.name}}</h5>
+          <div class="fill">
+          <h6>Nuts:<i [ngStyle]="{'color': food.nuts? 'green' : 'red'}" class="fa-solid fa-{{food.nuts? 'check' : 'x'}}"></i></h6>
+          <h6>Vegetarian:<i [ngStyle]="{'color': food.vegeterian? 'green' : 'red'}" class="fa-solid fa-{{food.vegeterian? 'check' : 'x'}}"></i></h6>
+        </div>
+          <p>Spiciness : {{food.spiciness}}</p>
+          <p>{{food.price}}$</p>
+          <a (click)="addToCart(food.id, food.price)" class="btn btn-primary">Add To cart</a>
+        </div>
+      </div>
+      <div *ngIf="foodList == 0" class="notFound">
+        <img class="image" src="https://cdn.dribbble.com/users/2382015/screenshots/6065978/no_result.gif" alt="">
+    </div>
+</section>
+</div>

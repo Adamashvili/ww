@@ -1,0 +1,129 @@
+*{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    scroll-behavior: smooth;
+}
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin: 20px 0;
+}
+.block{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+}
+.fill{
+    display: flex;
+    gap: 5px;
+}
+.card{
+    /* width: 500px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #EEEEE6;
+    box-shadow: 0 0 10px 10px rgb(53, 180, 174);
+}
+.card img{
+    width: 80%;
+    filter: drop-shadow(0 50px 20px rgba(0, 0, 0, 0.6));
+}
+li {
+    cursor: pointer;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main button{
+    height: 40px;
+    background-color: red;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border: 2px dotted black;
+    width: 260px;
+    height: 200px;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    box-shadow: 0 0 15px 15px rgb(49, 201, 69);
+    border-radius: 5px;
+}
+section {
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+li {
+    padding: 8px;
+}
+
+.mimdinare {
+    background-color: red;
+    color: white;
+}
+@media only screen and (max-width: 922px){
+    ul{
+        flex-wrap: wrap;
+    }
+    .block{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        width: 14rem !important;
+    }
+    section{
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+}
+@media only screen and (max-width: 768px){
+    ul{
+        flex-wrap: wrap;
+    }
+    .block{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        width: 16rem !important;
+    }
+    section{
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+}
+@media only screen and (max-width: 555px){
+    ul{
+        flex-wrap: wrap;
+    }
+    .block{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        width: 16rem !important;
+    }
+    section{
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+    }
+}

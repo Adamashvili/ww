@@ -1,0 +1,36 @@
+*{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    scroll-behavior: smooth;
+}
+.finish{
+    background-color: rgb(5, 198, 227);
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+   }
+   .zd{
+    border-radius: 7px;
+    border: 2px solid rgb(148, 13, 13);
+    border: none;
+    font-size: 15px;
+    color: white;
+    background-color: rgb(4, 116, 101);
+    padding: 10px 12px;
+}
+table{
+    background-color: rgb(128, 123, 123);
+}
+h1{
+    color: lime;
+}
+.but1{
+    border-radius: 5px;
+    background-color: cornflowerblue;
+}
+.but1 svg g{
+    color: black !important;
+}
